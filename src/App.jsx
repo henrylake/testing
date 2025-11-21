@@ -22,6 +22,7 @@ let placeholderTodos = [
 function TodoList() {
   const [todos, setTodos] = useState(placeholderTodos)
   
+  // @present-start
   function toggleBox(e) {
     const id = e.target.id
     const todoIndex = todos.findIndex((_todo) => String(_todo.id) === String(id))
@@ -38,6 +39,7 @@ function TodoList() {
   }
   return todos.map((todo) => <TodoItem key={todo.id} todo={todo} onClick={toggleBox} />)
 }
+// @present-end
 
 function TodoItem({todo, onClick}) {
   return <div className='todo-item'>
